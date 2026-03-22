@@ -1,7 +1,13 @@
 from pathlib import Path
 
 
-def generate_report(incident_details, downtime, error_analysis, root_cause):
+def generate_report(
+    incident_details,
+    downtime,
+    error_analysis,
+    root_cause,
+    output_path="output/reports/system_failure_report.txt",
+):
     """
     Generate a structured text incident report.
     """
@@ -54,13 +60,13 @@ def generate_report(incident_details, downtime, error_analysis, root_cause):
     else:
         report += "- No incident timeline available\n"
 
-    file_path = Path("output/reports/system_failure_report.txt")
+    file_path = Path(output_path)
     file_path.parent.mkdir(parents=True, exist_ok=True)
 
     with file_path.open("w", encoding="utf-8") as file:
         file.write(report)
 
-    return report
+    return report, str(file_path)
 
 
 def _format_downtime(downtime):

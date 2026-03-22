@@ -11,16 +11,17 @@ except ModuleNotFoundError:
     plt = None
 
 
-CHARTS_DIR = Path("output/charts")
+DEFAULT_CHARTS_DIR = Path("output/charts")
 
 
-def plot_error_frequency(error_analysis):
+def plot_error_frequency(error_analysis, output_dir=DEFAULT_CHARTS_DIR):
     """
     Plot the most frequent error patterns.
     """
 
-    chart_path = CHARTS_DIR / "error_frequency_chart.png"
-    CHARTS_DIR.mkdir(parents=True, exist_ok=True)
+    charts_dir = Path(output_dir)
+    chart_path = charts_dir / "error_frequency_chart.png"
+    charts_dir.mkdir(parents=True, exist_ok=True)
     if plt is None:
         return None
 
@@ -45,13 +46,14 @@ def plot_error_frequency(error_analysis):
     return chart_path
 
 
-def plot_log_levels(logs):
+def plot_log_levels(logs, output_dir=DEFAULT_CHARTS_DIR):
     """
     Plot distribution of log levels across the loaded dataset.
     """
 
-    chart_path = CHARTS_DIR / "log_level_distribution.png"
-    CHARTS_DIR.mkdir(parents=True, exist_ok=True)
+    charts_dir = Path(output_dir)
+    chart_path = charts_dir / "log_level_distribution.png"
+    charts_dir.mkdir(parents=True, exist_ok=True)
     if plt is None:
         return None
 
@@ -77,13 +79,14 @@ def plot_log_levels(logs):
     return chart_path
 
 
-def plot_error_timeline(incident_details):
+def plot_error_timeline(incident_details, output_dir=DEFAULT_CHARTS_DIR):
     """
     Plot error events across the incident timeline.
     """
 
-    chart_path = CHARTS_DIR / "error_timeline.png"
-    CHARTS_DIR.mkdir(parents=True, exist_ok=True)
+    charts_dir = Path(output_dir)
+    chart_path = charts_dir / "error_timeline.png"
+    charts_dir.mkdir(parents=True, exist_ok=True)
     if plt is None:
         return None
 

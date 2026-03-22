@@ -11,7 +11,13 @@ except ModuleNotFoundError:
     getSampleStyleSheet = None
 
 
-def generate_pdf_report(incident_details, downtime, error_analysis, root_cause):
+def generate_pdf_report(
+    incident_details,
+    downtime,
+    error_analysis,
+    root_cause,
+    output_path="output/reports/system_failure_report.pdf",
+):
     """
     Generate a PDF incident report with analysis and charts.
     """
@@ -19,7 +25,7 @@ def generate_pdf_report(incident_details, downtime, error_analysis, root_cause):
     if SimpleDocTemplate is None:
         return None
 
-    pdf_path = Path("output/reports/system_failure_report.pdf")
+    pdf_path = Path(output_path)
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
 
     styles = getSampleStyleSheet()
