@@ -1,0 +1,62 @@
+<logs>
+  <log>
+    <timestamp>2026-02-02T19:00:09Z</timestamp>
+    <level>INFO</level>
+    <message>Initializing deployment pipeline</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:00:22Z</timestamp>
+    <level>INFO</level>
+    <message>Cloning repository from GitHub</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:00:28Z</timestamp>
+    <level>INFO</level>
+    <message>Installing dependencies</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:00:35Z</timestamp>
+    <level>WARNING</level>
+    <message>Deprecated configuration detected in wrangler.toml</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:00:47Z</timestamp>
+    <level>INFO</level>
+    <message>Starting build process</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:00:59Z</timestamp>
+    <level>ERROR</level>
+    <message>Could not resolve module 'http'</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:01:17Z</timestamp>
+    <level>ERROR</level>
+    <message>Could not resolve module 'https'</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:01:24Z</timestamp>
+    <level>ERROR</level>
+    <message>Could not resolve module 'net'</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:01:37Z</timestamp>
+    <level>ERROR</level>
+    <message>Could not resolve module 'fs'</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:01:51Z</timestamp>
+    <level>ERROR</level>
+    <message>Build failed with multiple errors</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:01:58Z</timestamp>
+    <level>INFO</level>
+    <message>Attempting rollback procedure</message>
+  </log>
+  <log>
+    <timestamp>2026-02-02T19:02:15Z</timestamp>
+    <level>INFO</level>
+    <message>Rollback completed successfully</message>
+  </log>
+</logs>

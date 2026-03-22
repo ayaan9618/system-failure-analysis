@@ -1,0 +1,807 @@
+2026-02-02T19:08:06.266417Z	Cloning repository...
+2026-02-02T19:08:06.905615Z	From https://github.com/ayaan9618/Reader
+2026-02-02T19:08:06.906905Z	 * branch            efa7599c15c69b8ebdfa471cf2321f3279acbdc6 -> FETCH_HEAD
+2026-02-02T19:08:06.907356Z	
+2026-02-02T19:08:06.939438Z	HEAD is now at efa7599 up
+2026-02-02T19:08:06.940072Z	
+2026-02-02T19:08:07.011696Z	
+2026-02-02T19:08:07.01219Z	Using v2 root directory strategy
+2026-02-02T19:08:07.032108Z	Success: Finished cloning repository files
+2026-02-02T19:08:08.703855Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-02-02T19:08:08.704475Z	
+2026-02-02T19:08:08.706935Z	Found wrangler.toml file. Reading build configuration...
+2026-02-02T19:08:09.815983Z	A wrangler.toml file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
+2026-02-02T19:08:09.881993Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2026-02-02T19:08:09.882547Z	Installing project dependencies: npm clean-install --progress=false
+2026-02-02T19:08:18.377948Z	
+2026-02-02T19:08:18.378182Z	added 526 packages, and audited 527 packages in 8s
+2026-02-02T19:08:18.378323Z	
+2026-02-02T19:08:18.378396Z	87 packages are looking for funding
+2026-02-02T19:08:18.378466Z	  run `npm fund` for details
+2026-02-02T19:08:18.379605Z	
+2026-02-02T19:08:18.379861Z	found 0 vulnerabilities
+2026-02-02T19:08:18.407696Z	Executing user command: npm run build
+2026-02-02T19:08:18.765689Z	
+2026-02-02T19:08:18.766046Z	> rest-express@1.0.0 build
+2026-02-02T19:08:18.766145Z	> tsx script/build.ts
+2026-02-02T19:08:18.766233Z	
+2026-02-02T19:08:19.628581Z	building client...
+2026-02-02T19:08:19.709905Z	[36mvite v7.3.0 [32mbuilding client environment for production...[36m[39m
+2026-02-02T19:08:20.263016Z	transforming...
+2026-02-02T19:08:24.021213Z	[32m✓[39m 2482 modules transformed.
+2026-02-02T19:08:24.340921Z	rendering chunks...
+2026-02-02T19:08:24.350153Z	computing gzip size...
+2026-02-02T19:08:24.368257Z	[2m../dist/public/[22m[32mindex.html                 [39m[1m[2m  2.27 kB[22m[1m[22m[2m │ gzip:   0.86 kB[22m
+2026-02-02T19:08:24.368532Z	[2m../dist/public/[22m[2massets/[22m[35mindex-BbwcoSD7.css  [39m[1m[2m 93.84 kB[22m[1m[22m[2m │ gzip:  14.51 kB[22m
+2026-02-02T19:08:24.368757Z	[2m../dist/public/[22m[2massets/[22m[36mindex-C8NHX9XF.js   [39m[1m[33m593.22 kB[39m[22m[2m │ gzip: 182.72 kB[22m
+2026-02-02T19:08:24.368892Z	[32m✓ built in 4.47s[39m
+2026-02-02T19:08:24.369121Z	building server...
+2026-02-02T19:08:24.370285Z	[33m
+2026-02-02T19:08:24.370557Z	(!) Some chunks are larger than 500 kB after minification. Consider:
+2026-02-02T19:08:24.370682Z	- Using dynamic import() to code-split the application
+2026-02-02T19:08:24.37089Z	- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-02-02T19:08:24.371133Z	- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+2026-02-02T19:08:24.495704Z	
+2026-02-02T19:08:24.496028Z	  dist/index.cjs  1.1mb ⚠️
+2026-02-02T19:08:24.496219Z	
+2026-02-02T19:08:24.496352Z	⚡ Done in 112ms
+2026-02-02T19:08:24.578202Z	Finished
+2026-02-02T19:08:25.437168Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-02-02T19:08:25.437806Z	
+2026-02-02T19:08:25.43812Z	Found wrangler.toml file. Reading build configuration...
+2026-02-02T19:08:26.544074Z	A wrangler.toml file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
+2026-02-02T19:08:26.545145Z	Found Functions directory at /functions. Uploading.
+2026-02-02T19:08:26.550591Z	 ⛅️ wrangler 3.101.0
+2026-02-02T19:08:26.550781Z	-------------------
+2026-02-02T19:08:27.919864Z	[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mBuild failed with 37 errors:[0m
+2026-02-02T19:08:27.920485Z	
+2026-02-02T19:08:27.920594Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "http"[0m
+2026-02-02T19:08:27.920704Z	  
+2026-02-02T19:08:27.920796Z	      ../node_modules/agent-base/dist/helpers.js:27:34:
+2026-02-02T19:08:27.920934Z	  [37m      27 │ const http = __importStar(require([32m"http"[37m));
+2026-02-02T19:08:27.921146Z	           ╵                                   [32m~~~~~~[0m
+2026-02-02T19:08:27.921321Z	  
+2026-02-02T19:08:27.921413Z	    The package "http" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.921523Z	  
+2026-02-02T19:08:27.921603Z	  
+2026-02-02T19:08:27.921661Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "https"[0m
+2026-02-02T19:08:27.921739Z	  
+2026-02-02T19:08:27.921805Z	      ../node_modules/agent-base/dist/helpers.js:28:35:
+2026-02-02T19:08:27.921867Z	  [37m      28 │ const https = __importStar(require([32m"https"[37m));
+2026-02-02T19:08:27.921924Z	           ╵                                    [32m~~~~~~~[0m
+2026-02-02T19:08:27.921986Z	  
+2026-02-02T19:08:27.922078Z	    The package "https" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.922141Z	  
+2026-02-02T19:08:27.922196Z	  
+2026-02-02T19:08:27.92225Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "net"[0m
+2026-02-02T19:08:27.922307Z	  
+2026-02-02T19:08:27.922361Z	      ../node_modules/agent-base/dist/index.js:30:33:
+2026-02-02T19:08:27.922424Z	  [37m      30 │ const net = __importStar(require([32m"net"[37m));
+2026-02-02T19:08:27.922479Z	           ╵                                  [32m~~~~~[0m
+2026-02-02T19:08:27.922542Z	  
+2026-02-02T19:08:27.922605Z	    The package "net" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.922659Z	  
+2026-02-02T19:08:27.922718Z	  
+2026-02-02T19:08:27.922774Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "http"[0m
+2026-02-02T19:08:27.92283Z	  
+2026-02-02T19:08:27.922887Z	      ../node_modules/agent-base/dist/index.js:31:34:
+2026-02-02T19:08:27.92294Z	  [37m      31 │ const http = __importStar(require([32m"http"[37m));
+2026-02-02T19:08:27.923Z	           ╵                                   [32m~~~~~~[0m
+2026-02-02T19:08:27.923316Z	  
+2026-02-02T19:08:27.923467Z	    The package "http" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.923632Z	  
+2026-02-02T19:08:27.923739Z	  
+2026-02-02T19:08:27.923839Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "https"[0m
+2026-02-02T19:08:27.923931Z	  
+2026-02-02T19:08:27.924053Z	      ../node_modules/agent-base/dist/index.js:32:24:
+2026-02-02T19:08:27.924155Z	  [37m      32 │ const https_1 = require([32m"https"[37m);
+2026-02-02T19:08:27.924247Z	           ╵                         [32m~~~~~~~[0m
+2026-02-02T19:08:27.92435Z	  
+2026-02-02T19:08:27.924444Z	    The package "https" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.924534Z	  
+2026-02-02T19:08:27.924626Z	  
+2026-02-02T19:08:27.924712Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "net"[0m
+2026-02-02T19:08:27.924826Z	  
+2026-02-02T19:08:27.924928Z	      ../node_modules/http-proxy-agent/dist/index.js:30:33:
+2026-02-02T19:08:27.925273Z	  [37m      30 │ const net = __importStar(require([32m"net"[37m));
+2026-02-02T19:08:27.925399Z	           ╵                                  [32m~~~~~[0m
+2026-02-02T19:08:27.925515Z	  
+2026-02-02T19:08:27.925622Z	    The package "net" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.925719Z	  
+2026-02-02T19:08:27.925815Z	  
+2026-02-02T19:08:27.925905Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "tls"[0m
+2026-02-02T19:08:27.926Z	  
+2026-02-02T19:08:27.926126Z	      ../node_modules/http-proxy-agent/dist/index.js:31:33:
+2026-02-02T19:08:27.926225Z	  [37m      31 │ const tls = __importStar(require([32m"tls"[37m));
+2026-02-02T19:08:27.926318Z	           ╵                                  [32m~~~~~[0m
+2026-02-02T19:08:27.926495Z	  
+2026-02-02T19:08:27.92662Z	    The package "tls" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.926778Z	  
+2026-02-02T19:08:27.926862Z	  
+2026-02-02T19:08:27.927029Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "events"[0m
+2026-02-02T19:08:27.927119Z	  
+2026-02-02T19:08:27.9272Z	      ../node_modules/http-proxy-agent/dist/index.js:33:25:
+2026-02-02T19:08:27.927295Z	  [37m      33 │ const events_1 = require([32m"events"[37m);
+2026-02-02T19:08:27.927388Z	           ╵                          [32m~~~~~~~~[0m
+2026-02-02T19:08:27.927476Z	  
+2026-02-02T19:08:27.927574Z	    The package "events" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.92767Z	  
+2026-02-02T19:08:27.927753Z	  
+2026-02-02T19:08:27.927841Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "url"[0m
+2026-02-02T19:08:27.927938Z	  
+2026-02-02T19:08:27.928129Z	      ../node_modules/http-proxy-agent/dist/index.js:35:22:
+2026-02-02T19:08:27.928205Z	  [37m      35 │ const url_1 = require([32m"url"[37m);
+2026-02-02T19:08:27.928336Z	           ╵                       [32m~~~~~[0m
+2026-02-02T19:08:27.928484Z	  
+2026-02-02T19:08:27.928631Z	    The package "url" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.928756Z	  
+2026-02-02T19:08:27.928836Z	  
+2026-02-02T19:08:27.928924Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "net"[0m
+2026-02-02T19:08:27.929044Z	  
+2026-02-02T19:08:27.929145Z	      ../node_modules/https-proxy-agent/dist/index.js:30:33:
+2026-02-02T19:08:27.929239Z	  [37m      30 │ const net = __importStar(require([32m"net"[37m));
+2026-02-02T19:08:27.929333Z	           ╵                                  [32m~~~~~[0m
+2026-02-02T19:08:27.929427Z	  
+2026-02-02T19:08:27.929547Z	    The package "net" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.929632Z	  
+2026-02-02T19:08:27.929745Z	  
+2026-02-02T19:08:27.929827Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "tls"[0m
+2026-02-02T19:08:27.929914Z	  
+2026-02-02T19:08:27.93006Z	      ../node_modules/https-proxy-agent/dist/index.js:31:33:
+2026-02-02T19:08:27.930166Z	  [37m      31 │ const tls = __importStar(require([32m"tls"[37m));
+2026-02-02T19:08:27.930273Z	           ╵                                  [32m~~~~~[0m
+2026-02-02T19:08:27.930383Z	  
+2026-02-02T19:08:27.930478Z	    The package "tls" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.930579Z	  
+2026-02-02T19:08:27.930677Z	  
+2026-02-02T19:08:27.930789Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "assert"[0m
+2026-02-02T19:08:27.930878Z	  
+2026-02-02T19:08:27.930967Z	      ../node_modules/https-proxy-agent/dist/index.js:32:41:
+2026-02-02T19:08:27.931083Z	  [37m      32 │ const assert_1 = __importDefault(require([32m"assert"[37m));
+2026-02-02T19:08:27.931175Z	           ╵                                          [32m~~~~~~~~[0m
+2026-02-02T19:08:27.931265Z	  
+2026-02-02T19:08:27.931362Z	    The package "assert" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.93145Z	  
+2026-02-02T19:08:27.931545Z	  
+2026-02-02T19:08:27.931635Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "url"[0m
+2026-02-02T19:08:27.931864Z	  
+2026-02-02T19:08:27.93197Z	      ../node_modules/https-proxy-agent/dist/index.js:35:22:
+2026-02-02T19:08:27.932125Z	  [37m      35 │ const url_1 = require([32m"url"[37m);
+2026-02-02T19:08:27.932221Z	           ╵                       [32m~~~~~[0m
+2026-02-02T19:08:27.932322Z	  
+2026-02-02T19:08:27.93242Z	    The package "url" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.932516Z	  
+2026-02-02T19:08:27.932616Z	  
+2026-02-02T19:08:27.932751Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "path"[0m
+2026-02-02T19:08:27.933004Z	  
+2026-02-02T19:08:27.933186Z	      ../node_modules/jsdom/lib/api.js:2:21:
+2026-02-02T19:08:27.933307Z	  [37m      2 │ const path = require([32m"path"[37m);
+2026-02-02T19:08:27.933437Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.933602Z	  
+2026-02-02T19:08:27.933709Z	    The package "path" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.933813Z	  
+2026-02-02T19:08:27.933929Z	  
+2026-02-02T19:08:27.934071Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "fs"[0m
+2026-02-02T19:08:27.934173Z	  
+2026-02-02T19:08:27.934256Z	      ../node_modules/jsdom/lib/api.js:3:19:
+2026-02-02T19:08:27.934354Z	  [37m      3 │ const fs = require([32m"fs"[37m).promises;
+2026-02-02T19:08:27.934454Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.934554Z	  
+2026-02-02T19:08:27.934651Z	    The package "fs" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.934741Z	  
+2026-02-02T19:08:27.934835Z	  
+2026-02-02T19:08:27.93502Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "vm"[0m
+2026-02-02T19:08:27.935123Z	  
+2026-02-02T19:08:27.935181Z	      ../node_modules/jsdom/lib/api.js:4:19:
+2026-02-02T19:08:27.935235Z	  [37m      4 │ const vm = require([32m"vm"[37m);
+2026-02-02T19:08:27.935304Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.935365Z	  
+2026-02-02T19:08:27.935422Z	    The package "vm" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.935476Z	  
+2026-02-02T19:08:27.935527Z	  
+2026-02-02T19:08:27.935583Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "vm"[0m
+2026-02-02T19:08:27.935641Z	  
+2026-02-02T19:08:27.935694Z	      ../node_modules/jsdom/lib/jsdom/browser/Window.js:2:19:
+2026-02-02T19:08:27.93575Z	  [37m      2 │ const vm = require([32m"vm"[37m);
+2026-02-02T19:08:27.935814Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.935879Z	  
+2026-02-02T19:08:27.93594Z	    The package "vm" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.936019Z	  
+2026-02-02T19:08:27.936099Z	  
+2026-02-02T19:08:27.936157Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "fs"[0m
+2026-02-02T19:08:27.936216Z	  
+2026-02-02T19:08:27.93627Z	      ../node_modules/jsdom/lib/jsdom/browser/resources/resource-loader.js:2:19:
+2026-02-02T19:08:27.936335Z	  [37m      2 │ const fs = require([32m"fs"[37m);
+2026-02-02T19:08:27.93643Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.936502Z	  
+2026-02-02T19:08:27.936567Z	    The package "fs" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.936629Z	  
+2026-02-02T19:08:27.936682Z	  
+2026-02-02T19:08:27.936735Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "url"[0m
+2026-02-02T19:08:27.936801Z	  
+2026-02-02T19:08:27.936858Z	      ../node_modules/jsdom/lib/jsdom/browser/resources/resource-loader.js:3:34:
+2026-02-02T19:08:27.936913Z	  [37m      3 │ const { fileURLToPath } = require([32m"url"[37m);
+2026-02-02T19:08:27.936968Z	          ╵                                   [32m~~~~~[0m
+2026-02-02T19:08:27.937065Z	  
+2026-02-02T19:08:27.937125Z	    The package "url" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.937179Z	  
+2026-02-02T19:08:27.937232Z	  
+2026-02-02T19:08:27.937287Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "crypto"[0m
+2026-02-02T19:08:27.93735Z	  
+2026-02-02T19:08:27.937408Z	      ../node_modules/jsdom/lib/jsdom/living/crypto/Crypto-impl.js:3:27:
+2026-02-02T19:08:27.937475Z	  [37m      3 │ const nodeCrypto = require([32m"crypto"[37m);
+2026-02-02T19:08:27.937533Z	          ╵                            [32m~~~~~~~~[0m
+2026-02-02T19:08:27.937588Z	  
+2026-02-02T19:08:27.937643Z	    The package "crypto" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.937697Z	  
+2026-02-02T19:08:27.937749Z	  
+2026-02-02T19:08:27.937807Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "http"[0m
+2026-02-02T19:08:27.937866Z	  
+2026-02-02T19:08:27.937924Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/agent-factory.js:2:21:
+2026-02-02T19:08:27.937986Z	  [37m      2 │ const http = require([32m"http"[37m);
+2026-02-02T19:08:27.938293Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.938368Z	  
+2026-02-02T19:08:27.93845Z	    The package "http" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.938536Z	  
+2026-02-02T19:08:27.938636Z	  
+2026-02-02T19:08:27.938737Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "https"[0m
+2026-02-02T19:08:27.93887Z	  
+2026-02-02T19:08:27.938974Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/agent-factory.js:3:22:
+2026-02-02T19:08:27.939127Z	  [37m      3 │ const https = require([32m"https"[37m);
+2026-02-02T19:08:27.93924Z	          ╵                       [32m~~~~~~~[0m
+2026-02-02T19:08:27.93936Z	  
+2026-02-02T19:08:27.939519Z	    The package "https" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.939615Z	  
+2026-02-02T19:08:27.939718Z	  
+2026-02-02T19:08:27.939812Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "http"[0m
+2026-02-02T19:08:27.939905Z	  
+2026-02-02T19:08:27.939996Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/http-request.js:2:21:
+2026-02-02T19:08:27.940128Z	  [37m      2 │ const http = require([32m"http"[37m);
+2026-02-02T19:08:27.940237Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.940338Z	  
+2026-02-02T19:08:27.940439Z	    The package "http" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.940542Z	  
+2026-02-02T19:08:27.940647Z	  
+2026-02-02T19:08:27.940743Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "https"[0m
+2026-02-02T19:08:27.94085Z	  
+2026-02-02T19:08:27.940931Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/http-request.js:3:22:
+2026-02-02T19:08:27.941052Z	  [37m      3 │ const https = require([32m"https"[37m);
+2026-02-02T19:08:27.94116Z	          ╵                       [32m~~~~~~~[0m
+2026-02-02T19:08:27.941257Z	  
+2026-02-02T19:08:27.941413Z	    The package "https" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.941506Z	  
+2026-02-02T19:08:27.9416Z	  
+2026-02-02T19:08:27.941683Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "stream"[0m
+2026-02-02T19:08:27.941768Z	  
+2026-02-02T19:08:27.941856Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/http-request.js:4:29:
+2026-02-02T19:08:27.941948Z	  [37m      4 │ const { Writable } = require([32m"stream"[37m);
+2026-02-02T19:08:27.942068Z	          ╵                              [32m~~~~~~~~[0m
+2026-02-02T19:08:27.94217Z	  
+2026-02-02T19:08:27.942272Z	    The package "stream" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.942371Z	  
+2026-02-02T19:08:27.942477Z	  
+2026-02-02T19:08:27.942583Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "zlib"[0m
+2026-02-02T19:08:27.942763Z	  
+2026-02-02T19:08:27.942853Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/http-request.js:5:21:
+2026-02-02T19:08:27.942923Z	  [37m      5 │ const zlib = require([32m"zlib"[37m);
+2026-02-02T19:08:27.942983Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.943078Z	  
+2026-02-02T19:08:27.943149Z	    The package "zlib" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.943206Z	  
+2026-02-02T19:08:27.943262Z	  
+2026-02-02T19:08:27.943326Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "util"[0m
+2026-02-02T19:08:27.943386Z	  
+2026-02-02T19:08:27.943455Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:2:21:
+2026-02-02T19:08:27.943514Z	  [37m      2 │ const util = require([32m"util"[37m);
+2026-02-02T19:08:27.94357Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.943626Z	  
+2026-02-02T19:08:27.943688Z	    The package "util" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.943745Z	  
+2026-02-02T19:08:27.9438Z	  
+2026-02-02T19:08:27.943856Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "path"[0m
+2026-02-02T19:08:27.94392Z	  
+2026-02-02T19:08:27.943977Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/style-rules.js:3:21:
+2026-02-02T19:08:27.944375Z	  [37m      3 │ const path = require([32m"path"[37m);
+2026-02-02T19:08:27.944527Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.94464Z	  
+2026-02-02T19:08:27.944855Z	    The package "path" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.944964Z	  
+2026-02-02T19:08:27.945116Z	  
+2026-02-02T19:08:27.945278Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "fs"[0m
+2026-02-02T19:08:27.945421Z	  
+2026-02-02T19:08:27.945664Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/style-rules.js:4:19:
+2026-02-02T19:08:27.945775Z	  [37m      4 │ const fs = require([32m"fs"[37m);
+2026-02-02T19:08:27.946049Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.946152Z	  
+2026-02-02T19:08:27.946216Z	    The package "fs" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.946273Z	  
+2026-02-02T19:08:27.946328Z	  
+2026-02-02T19:08:27.946388Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "os"[0m
+2026-02-02T19:08:27.946445Z	  
+2026-02-02T19:08:27.946506Z	      ../node_modules/jsdom/lib/jsdom/living/navigator/NavigatorConcurrentHardware-impl.js:2:19:
+2026-02-02T19:08:27.946561Z	  [37m      2 │ const os = require([32m"os"[37m);
+2026-02-02T19:08:27.946625Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.946687Z	  
+2026-02-02T19:08:27.946744Z	    The package "os" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.946801Z	  
+2026-02-02T19:08:27.94686Z	  
+2026-02-02T19:08:27.946923Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "vm"[0m
+2026-02-02T19:08:27.946984Z	  
+2026-02-02T19:08:27.947072Z	      ../node_modules/jsdom/lib/jsdom/living/nodes/HTMLScriptElement-impl.js:2:19:
+2026-02-02T19:08:27.947145Z	  [37m      2 │ const vm = require([32m"vm"[37m);
+2026-02-02T19:08:27.947209Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.94727Z	  
+2026-02-02T19:08:27.947325Z	    The package "vm" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.947382Z	  
+2026-02-02T19:08:27.947436Z	  
+2026-02-02T19:08:27.947492Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "url"[0m
+2026-02-02T19:08:27.947547Z	  
+2026-02-02T19:08:27.947618Z	      ../node_modules/jsdom/lib/jsdom/living/websockets/WebSocket-impl.js:3:24:
+2026-02-02T19:08:27.947672Z	  [37m      3 │ const nodeURL = require([32m"url"[37m);
+2026-02-02T19:08:27.947728Z	          ╵                         [32m~~~~~[0m
+2026-02-02T19:08:27.947783Z	  
+2026-02-02T19:08:27.947838Z	    The package "url" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.947907Z	  
+2026-02-02T19:08:27.950069Z	  
+2026-02-02T19:08:27.95018Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "http"[0m
+2026-02-02T19:08:27.950244Z	  
+2026-02-02T19:08:27.950299Z	      ../node_modules/jsdom/lib/jsdom/living/xhr/XMLHttpRequest-impl.js:3:34:
+2026-02-02T19:08:27.95036Z	  [37m      3 │ const HTTP_STATUS_CODES = require([32m"http"[37m).STATUS_CODES;
+2026-02-02T19:08:27.950427Z	          ╵                                   [32m~~~~~~[0m
+2026-02-02T19:08:27.950482Z	  
+2026-02-02T19:08:27.950546Z	    The package "http" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.950604Z	  
+2026-02-02T19:08:27.95066Z	  
+2026-02-02T19:08:27.950719Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "child_process"[0m
+2026-02-02T19:08:27.950796Z	  
+2026-02-02T19:08:27.950852Z	      ../node_modules/jsdom/lib/jsdom/living/xhr/XMLHttpRequest-impl.js:4:30:
+2026-02-02T19:08:27.950914Z	  [37m      4 │ const { spawnSync } = require([32m"child_process"[37m);
+2026-02-02T19:08:27.95097Z	          ╵                               [32m~~~~~~~~~~~~~~~[0m
+2026-02-02T19:08:27.951053Z	  
+2026-02-02T19:08:27.951133Z	    The package "child_process" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.951205Z	  
+2026-02-02T19:08:27.951267Z	  
+2026-02-02T19:08:27.951327Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "fs"[0m
+2026-02-02T19:08:27.951391Z	  
+2026-02-02T19:08:27.951446Z	      ../node_modules/jsdom/lib/jsdom/living/xhr/xhr-utils.js:2:19:
+2026-02-02T19:08:27.951507Z	  [37m      2 │ const fs = require([32m"fs"[37m);
+2026-02-02T19:08:27.951565Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.951619Z	  
+2026-02-02T19:08:27.95168Z	    The package "fs" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.951737Z	  
+2026-02-02T19:08:27.951998Z	  
+2026-02-02T19:08:27.952121Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "events"[0m
+2026-02-02T19:08:27.95219Z	  
+2026-02-02T19:08:27.952245Z	      ../node_modules/jsdom/lib/jsdom/living/xhr/xhr-utils.js:3:33:
+2026-02-02T19:08:27.952301Z	  [37m      3 │ const { EventEmitter } = require([32m"events"[37m);
+2026-02-02T19:08:27.952367Z	          ╵                                  [32m~~~~~~~~[0m
+2026-02-02T19:08:27.952446Z	  
+2026-02-02T19:08:27.95251Z	    The package "events" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.95258Z	  
+2026-02-02T19:08:27.952642Z	  
+2026-02-02T19:08:27.952702Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "events"[0m
+2026-02-02T19:08:27.952764Z	  
+2026-02-02T19:08:27.952823Z	      ../node_modules/jsdom/lib/jsdom/virtual-console.js:2:33:
+2026-02-02T19:08:27.952885Z	  [37m      2 │ const { EventEmitter } = require([32m"events"[37m);
+2026-02-02T19:08:27.952945Z	          ╵                                  [32m~~~~~~~~[0m
+2026-02-02T19:08:27.953015Z	  
+2026-02-02T19:08:27.953079Z	    The package "events" wasn't found on the file system but is built into node. Are you trying to bundle for node? You can use "platform: 'node'" to do that, which will remove this error.
+2026-02-02T19:08:27.953144Z	  
+2026-02-02T19:08:27.953358Z	  
+2026-02-02T19:08:27.953509Z	
+2026-02-02T19:08:27.953646Z	
+2026-02-02T19:08:27.953781Z	
+2026-02-02T19:08:27.953898Z	[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mBuild failed with 37 errors:[0m
+2026-02-02T19:08:27.954103Z	
+2026-02-02T19:08:27.954238Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "http"[0m
+2026-02-02T19:08:27.954379Z	  
+2026-02-02T19:08:27.954472Z	      ../node_modules/agent-base/dist/helpers.js:27:34:
+2026-02-02T19:08:27.954581Z	  [37m      27 │ const http = __importStar(require([32m"http"[37m));
+2026-02-02T19:08:27.954859Z	           ╵                                   [32m~~~~~~[0m
+2026-02-02T19:08:27.955003Z	  
+2026-02-02T19:08:27.955145Z	    The package "http" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.95526Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.955362Z	    
+2026-02-02T19:08:27.95546Z	  
+2026-02-02T19:08:27.955565Z	  
+2026-02-02T19:08:27.955677Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "https"[0m
+2026-02-02T19:08:27.955774Z	  
+2026-02-02T19:08:27.955882Z	      ../node_modules/agent-base/dist/helpers.js:28:35:
+2026-02-02T19:08:27.955978Z	  [37m      28 │ const https = __importStar(require([32m"https"[37m));
+2026-02-02T19:08:27.956087Z	           ╵                                    [32m~~~~~~~[0m
+2026-02-02T19:08:27.956503Z	  
+2026-02-02T19:08:27.956633Z	    The package "https" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.956845Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.957085Z	    
+2026-02-02T19:08:27.957196Z	  
+2026-02-02T19:08:27.957279Z	  
+2026-02-02T19:08:27.957421Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "net"[0m
+2026-02-02T19:08:27.95754Z	  
+2026-02-02T19:08:27.957647Z	      ../node_modules/agent-base/dist/index.js:30:33:
+2026-02-02T19:08:27.957752Z	  [37m      30 │ const net = __importStar(require([32m"net"[37m));
+2026-02-02T19:08:27.957858Z	           ╵                                  [32m~~~~~[0m
+2026-02-02T19:08:27.957965Z	  
+2026-02-02T19:08:27.958086Z	    The package "net" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.958258Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.958354Z	    
+2026-02-02T19:08:27.958458Z	  
+2026-02-02T19:08:27.958562Z	  
+2026-02-02T19:08:27.958762Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "http"[0m
+2026-02-02T19:08:27.958862Z	  
+2026-02-02T19:08:27.95896Z	      ../node_modules/agent-base/dist/index.js:31:34:
+2026-02-02T19:08:27.959105Z	  [37m      31 │ const http = __importStar(require([32m"http"[37m));
+2026-02-02T19:08:27.959211Z	           ╵                                   [32m~~~~~~[0m
+2026-02-02T19:08:27.959312Z	  
+2026-02-02T19:08:27.959409Z	    The package "http" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.959506Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.959602Z	    
+2026-02-02T19:08:27.959689Z	  
+2026-02-02T19:08:27.959776Z	  
+2026-02-02T19:08:27.95986Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "https"[0m
+2026-02-02T19:08:27.959945Z	  
+2026-02-02T19:08:27.960043Z	      ../node_modules/agent-base/dist/index.js:32:24:
+2026-02-02T19:08:27.960129Z	  [37m      32 │ const https_1 = require([32m"https"[37m);
+2026-02-02T19:08:27.960216Z	           ╵                         [32m~~~~~~~[0m
+2026-02-02T19:08:27.960311Z	  
+2026-02-02T19:08:27.960396Z	    The package "https" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.960484Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.960574Z	    
+2026-02-02T19:08:27.960662Z	  
+2026-02-02T19:08:27.960791Z	  
+2026-02-02T19:08:27.960901Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "net"[0m
+2026-02-02T19:08:27.961022Z	  
+2026-02-02T19:08:27.961121Z	      ../node_modules/http-proxy-agent/dist/index.js:30:33:
+2026-02-02T19:08:27.961211Z	  [37m      30 │ const net = __importStar(require([32m"net"[37m));
+2026-02-02T19:08:27.961307Z	           ╵                                  [32m~~~~~[0m
+2026-02-02T19:08:27.961399Z	  
+2026-02-02T19:08:27.961493Z	    The package "net" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.961581Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.961674Z	    
+2026-02-02T19:08:27.962083Z	  
+2026-02-02T19:08:27.962199Z	  
+2026-02-02T19:08:27.96231Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "tls"[0m
+2026-02-02T19:08:27.962429Z	  
+2026-02-02T19:08:27.962539Z	      ../node_modules/http-proxy-agent/dist/index.js:31:33:
+2026-02-02T19:08:27.962619Z	  [37m      31 │ const tls = __importStar(require([32m"tls"[37m));
+2026-02-02T19:08:27.962693Z	           ╵                                  [32m~~~~~[0m
+2026-02-02T19:08:27.962768Z	  
+2026-02-02T19:08:27.962843Z	    The package "tls" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.962926Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.963032Z	    
+2026-02-02T19:08:27.963129Z	  
+2026-02-02T19:08:27.963224Z	  
+2026-02-02T19:08:27.963323Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "events"[0m
+2026-02-02T19:08:27.963412Z	  
+2026-02-02T19:08:27.963499Z	      ../node_modules/http-proxy-agent/dist/index.js:33:25:
+2026-02-02T19:08:27.963584Z	  [37m      33 │ const events_1 = require([32m"events"[37m);
+2026-02-02T19:08:27.963678Z	           ╵                          [32m~~~~~~~~[0m
+2026-02-02T19:08:27.963769Z	  
+2026-02-02T19:08:27.963905Z	    The package "events" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.964027Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.96413Z	    
+2026-02-02T19:08:27.964227Z	  
+2026-02-02T19:08:27.964328Z	  
+2026-02-02T19:08:27.964419Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "url"[0m
+2026-02-02T19:08:27.964504Z	  
+2026-02-02T19:08:27.964586Z	      ../node_modules/http-proxy-agent/dist/index.js:35:22:
+2026-02-02T19:08:27.964672Z	  [37m      35 │ const url_1 = require([32m"url"[37m);
+2026-02-02T19:08:27.964757Z	           ╵                       [32m~~~~~[0m
+2026-02-02T19:08:27.964837Z	  
+2026-02-02T19:08:27.964918Z	    The package "url" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.965002Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.965108Z	    
+2026-02-02T19:08:27.965199Z	  
+2026-02-02T19:08:27.965297Z	  
+2026-02-02T19:08:27.965395Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "net"[0m
+2026-02-02T19:08:27.965492Z	  
+2026-02-02T19:08:27.965582Z	      ../node_modules/https-proxy-agent/dist/index.js:30:33:
+2026-02-02T19:08:27.965675Z	  [37m      30 │ const net = __importStar(require([32m"net"[37m));
+2026-02-02T19:08:27.965773Z	           ╵                                  [32m~~~~~[0m
+2026-02-02T19:08:27.965868Z	  
+2026-02-02T19:08:27.965968Z	    The package "net" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.966083Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.966205Z	    
+2026-02-02T19:08:27.966319Z	  
+2026-02-02T19:08:27.966423Z	  
+2026-02-02T19:08:27.966566Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "tls"[0m
+2026-02-02T19:08:27.966651Z	  
+2026-02-02T19:08:27.966765Z	      ../node_modules/https-proxy-agent/dist/index.js:31:33:
+2026-02-02T19:08:27.966897Z	  [37m      31 │ const tls = __importStar(require([32m"tls"[37m));
+2026-02-02T19:08:27.967055Z	           ╵                                  [32m~~~~~[0m
+2026-02-02T19:08:27.967147Z	  
+2026-02-02T19:08:27.967301Z	    The package "tls" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.967418Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.967489Z	    
+2026-02-02T19:08:27.967586Z	  
+2026-02-02T19:08:27.967727Z	  
+2026-02-02T19:08:27.967801Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "assert"[0m
+2026-02-02T19:08:27.967971Z	  
+2026-02-02T19:08:27.968119Z	      ../node_modules/https-proxy-agent/dist/index.js:32:41:
+2026-02-02T19:08:27.968191Z	  [37m      32 │ const assert_1 = __importDefault(require([32m"assert"[37m));
+2026-02-02T19:08:27.96832Z	           ╵                                          [32m~~~~~~~~[0m
+2026-02-02T19:08:27.968399Z	  
+2026-02-02T19:08:27.968533Z	    The package "assert" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.968605Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.968725Z	    
+2026-02-02T19:08:27.968807Z	  
+2026-02-02T19:08:27.968929Z	  
+2026-02-02T19:08:27.969127Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "url"[0m
+2026-02-02T19:08:27.969286Z	  
+2026-02-02T19:08:27.96942Z	      ../node_modules/https-proxy-agent/dist/index.js:35:22:
+2026-02-02T19:08:27.96958Z	  [37m      35 │ const url_1 = require([32m"url"[37m);
+2026-02-02T19:08:27.969719Z	           ╵                       [32m~~~~~[0m
+2026-02-02T19:08:27.969824Z	  
+2026-02-02T19:08:27.96996Z	    The package "url" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.970066Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.970138Z	    
+2026-02-02T19:08:27.970205Z	  
+2026-02-02T19:08:27.970261Z	  
+2026-02-02T19:08:27.970323Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "path"[0m
+2026-02-02T19:08:27.970379Z	  
+2026-02-02T19:08:27.970436Z	      ../node_modules/jsdom/lib/api.js:2:21:
+2026-02-02T19:08:27.97049Z	  [37m      2 │ const path = require([32m"path"[37m);
+2026-02-02T19:08:27.970546Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.970604Z	  
+2026-02-02T19:08:27.970675Z	    The package "path" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.970736Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.970794Z	    
+2026-02-02T19:08:27.97085Z	  
+2026-02-02T19:08:27.970907Z	  
+2026-02-02T19:08:27.97097Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "fs"[0m
+2026-02-02T19:08:27.971057Z	  
+2026-02-02T19:08:27.971139Z	      ../node_modules/jsdom/lib/api.js:3:19:
+2026-02-02T19:08:27.971198Z	  [37m      3 │ const fs = require([32m"fs"[37m).promises;
+2026-02-02T19:08:27.971255Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.971317Z	  
+2026-02-02T19:08:27.97137Z	    The package "fs" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.971432Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.971487Z	    
+2026-02-02T19:08:27.971542Z	  
+2026-02-02T19:08:27.971595Z	  
+2026-02-02T19:08:27.97165Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "vm"[0m
+2026-02-02T19:08:27.971705Z	  
+2026-02-02T19:08:27.971758Z	      ../node_modules/jsdom/lib/api.js:4:19:
+2026-02-02T19:08:27.971812Z	  [37m      4 │ const vm = require([32m"vm"[37m);
+2026-02-02T19:08:27.971867Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.971924Z	  
+2026-02-02T19:08:27.971977Z	    The package "vm" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.97212Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.972217Z	    
+2026-02-02T19:08:27.972364Z	  
+2026-02-02T19:08:27.972513Z	  
+2026-02-02T19:08:27.972661Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "vm"[0m
+2026-02-02T19:08:27.972799Z	  
+2026-02-02T19:08:27.972966Z	      ../node_modules/jsdom/lib/jsdom/browser/Window.js:2:19:
+2026-02-02T19:08:27.973246Z	  [37m      2 │ const vm = require([32m"vm"[37m);
+2026-02-02T19:08:27.973383Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.973535Z	  
+2026-02-02T19:08:27.973648Z	    The package "vm" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.973754Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.973883Z	    
+2026-02-02T19:08:27.974013Z	  
+2026-02-02T19:08:27.974131Z	  
+2026-02-02T19:08:27.974281Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "fs"[0m
+2026-02-02T19:08:27.974401Z	  
+2026-02-02T19:08:27.974485Z	      ../node_modules/jsdom/lib/jsdom/browser/resources/resource-loader.js:2:19:
+2026-02-02T19:08:27.974616Z	  [37m      2 │ const fs = require([32m"fs"[37m);
+2026-02-02T19:08:27.974766Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.974901Z	  
+2026-02-02T19:08:27.975042Z	    The package "fs" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.975165Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.975288Z	    
+2026-02-02T19:08:27.975396Z	  
+2026-02-02T19:08:27.975495Z	  
+2026-02-02T19:08:27.97559Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "url"[0m
+2026-02-02T19:08:27.975696Z	  
+2026-02-02T19:08:27.975792Z	      ../node_modules/jsdom/lib/jsdom/browser/resources/resource-loader.js:3:34:
+2026-02-02T19:08:27.975887Z	  [37m      3 │ const { fileURLToPath } = require([32m"url"[37m);
+2026-02-02T19:08:27.976018Z	          ╵                                   [32m~~~~~[0m
+2026-02-02T19:08:27.976134Z	  
+2026-02-02T19:08:27.976256Z	    The package "url" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.976368Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.976464Z	    
+2026-02-02T19:08:27.976559Z	  
+2026-02-02T19:08:27.976662Z	  
+2026-02-02T19:08:27.976739Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "crypto"[0m
+2026-02-02T19:08:27.976834Z	  
+2026-02-02T19:08:27.97693Z	      ../node_modules/jsdom/lib/jsdom/living/crypto/Crypto-impl.js:3:27:
+2026-02-02T19:08:27.977072Z	  [37m      3 │ const nodeCrypto = require([32m"crypto"[37m);
+2026-02-02T19:08:27.977179Z	          ╵                            [32m~~~~~~~~[0m
+2026-02-02T19:08:27.977286Z	  
+2026-02-02T19:08:27.977388Z	    The package "crypto" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.977483Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.977575Z	    
+2026-02-02T19:08:27.977701Z	  
+2026-02-02T19:08:27.977815Z	  
+2026-02-02T19:08:27.977915Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "http"[0m
+2026-02-02T19:08:27.978019Z	  
+2026-02-02T19:08:27.97812Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/agent-factory.js:2:21:
+2026-02-02T19:08:27.978223Z	  [37m      2 │ const http = require([32m"http"[37m);
+2026-02-02T19:08:27.978344Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.978451Z	  
+2026-02-02T19:08:27.978547Z	    The package "http" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.97864Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.978751Z	    
+2026-02-02T19:08:27.978846Z	  
+2026-02-02T19:08:27.97895Z	  
+2026-02-02T19:08:27.979062Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "https"[0m
+2026-02-02T19:08:27.979181Z	  
+2026-02-02T19:08:27.979286Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/agent-factory.js:3:22:
+2026-02-02T19:08:27.97939Z	  [37m      3 │ const https = require([32m"https"[37m);
+2026-02-02T19:08:27.979491Z	          ╵                       [32m~~~~~~~[0m
+2026-02-02T19:08:27.979593Z	  
+2026-02-02T19:08:27.97971Z	    The package "https" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.979831Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.979908Z	    
+2026-02-02T19:08:27.979991Z	  
+2026-02-02T19:08:27.980101Z	  
+2026-02-02T19:08:27.98022Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "http"[0m
+2026-02-02T19:08:27.980336Z	  
+2026-02-02T19:08:27.980439Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/http-request.js:2:21:
+2026-02-02T19:08:27.980565Z	  [37m      2 │ const http = require([32m"http"[37m);
+2026-02-02T19:08:27.980699Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.980797Z	  
+2026-02-02T19:08:27.980887Z	    The package "http" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.980988Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.981091Z	    
+2026-02-02T19:08:27.98119Z	  
+2026-02-02T19:08:27.981295Z	  
+2026-02-02T19:08:27.98141Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "https"[0m
+2026-02-02T19:08:27.981523Z	  
+2026-02-02T19:08:27.98162Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/http-request.js:3:22:
+2026-02-02T19:08:27.981716Z	  [37m      3 │ const https = require([32m"https"[37m);
+2026-02-02T19:08:27.981813Z	          ╵                       [32m~~~~~~~[0m
+2026-02-02T19:08:27.981902Z	  
+2026-02-02T19:08:27.982033Z	    The package "https" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.982155Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.982305Z	    
+2026-02-02T19:08:27.982378Z	  
+2026-02-02T19:08:27.982433Z	  
+2026-02-02T19:08:27.982494Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "stream"[0m
+2026-02-02T19:08:27.982554Z	  
+2026-02-02T19:08:27.982609Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/http-request.js:4:29:
+2026-02-02T19:08:27.982665Z	  [37m      4 │ const { Writable } = require([32m"stream"[37m);
+2026-02-02T19:08:27.982723Z	          ╵                              [32m~~~~~~~~[0m
+2026-02-02T19:08:27.982776Z	  
+2026-02-02T19:08:27.982829Z	    The package "stream" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.982882Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.982939Z	    
+2026-02-02T19:08:27.983019Z	  
+2026-02-02T19:08:27.9831Z	  
+2026-02-02T19:08:27.983157Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "zlib"[0m
+2026-02-02T19:08:27.983221Z	  
+2026-02-02T19:08:27.983295Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/http-request.js:5:21:
+2026-02-02T19:08:27.983368Z	  [37m      5 │ const zlib = require([32m"zlib"[37m);
+2026-02-02T19:08:27.983436Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.983495Z	  
+2026-02-02T19:08:27.983562Z	    The package "zlib" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.983628Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.983688Z	    
+2026-02-02T19:08:27.983743Z	  
+2026-02-02T19:08:27.983807Z	  
+2026-02-02T19:08:27.983863Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "util"[0m
+2026-02-02T19:08:27.983922Z	  
+2026-02-02T19:08:27.983975Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:2:21:
+2026-02-02T19:08:27.984081Z	  [37m      2 │ const util = require([32m"util"[37m);
+2026-02-02T19:08:27.984183Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.984302Z	  
+2026-02-02T19:08:27.984442Z	    The package "util" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.98453Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.984633Z	    
+2026-02-02T19:08:27.984729Z	  
+2026-02-02T19:08:27.984793Z	  
+2026-02-02T19:08:27.984855Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "path"[0m
+2026-02-02T19:08:27.984911Z	  
+2026-02-02T19:08:27.98497Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/style-rules.js:3:21:
+2026-02-02T19:08:27.985054Z	  [37m      3 │ const path = require([32m"path"[37m);
+2026-02-02T19:08:27.985124Z	          ╵                      [32m~~~~~~[0m
+2026-02-02T19:08:27.985184Z	  
+2026-02-02T19:08:27.98524Z	    The package "path" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.985298Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.985357Z	    
+2026-02-02T19:08:27.985416Z	  
+2026-02-02T19:08:27.985502Z	  
+2026-02-02T19:08:27.985566Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "fs"[0m
+2026-02-02T19:08:27.985631Z	  
+2026-02-02T19:08:27.985685Z	      ../node_modules/jsdom/lib/jsdom/living/helpers/style-rules.js:4:19:
+2026-02-02T19:08:27.985744Z	  [37m      4 │ const fs = require([32m"fs"[37m);
+2026-02-02T19:08:27.9858Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.98586Z	  
+2026-02-02T19:08:27.985917Z	    The package "fs" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.985979Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.986064Z	    
+2026-02-02T19:08:27.98613Z	  
+2026-02-02T19:08:27.986183Z	  
+2026-02-02T19:08:27.986242Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "os"[0m
+2026-02-02T19:08:27.986298Z	  
+2026-02-02T19:08:27.986361Z	      ../node_modules/jsdom/lib/jsdom/living/navigator/NavigatorConcurrentHardware-impl.js:2:19:
+2026-02-02T19:08:27.986417Z	  [37m      2 │ const os = require([32m"os"[37m);
+2026-02-02T19:08:27.986476Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.986529Z	  
+2026-02-02T19:08:27.986587Z	    The package "os" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.986649Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.986712Z	    
+2026-02-02T19:08:27.986774Z	  
+2026-02-02T19:08:27.986828Z	  
+2026-02-02T19:08:27.986886Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "vm"[0m
+2026-02-02T19:08:27.986943Z	  
+2026-02-02T19:08:27.987001Z	      ../node_modules/jsdom/lib/jsdom/living/nodes/HTMLScriptElement-impl.js:2:19:
+2026-02-02T19:08:27.987705Z	  [37m      2 │ const vm = require([32m"vm"[37m);
+2026-02-02T19:08:27.987832Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.98793Z	  
+2026-02-02T19:08:27.98814Z	    The package "vm" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.988249Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.988368Z	    
+2026-02-02T19:08:27.988455Z	  
+2026-02-02T19:08:27.988579Z	  
+2026-02-02T19:08:27.988678Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "url"[0m
+2026-02-02T19:08:27.988802Z	  
+2026-02-02T19:08:27.988897Z	      ../node_modules/jsdom/lib/jsdom/living/websockets/WebSocket-impl.js:3:24:
+2026-02-02T19:08:27.989021Z	  [37m      3 │ const nodeURL = require([32m"url"[37m);
+2026-02-02T19:08:27.989187Z	          ╵                         [32m~~~~~[0m
+2026-02-02T19:08:27.98927Z	  
+2026-02-02T19:08:27.989338Z	    The package "url" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.989395Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.989449Z	    
+2026-02-02T19:08:27.989509Z	  
+2026-02-02T19:08:27.98957Z	  
+2026-02-02T19:08:27.989625Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "http"[0m
+2026-02-02T19:08:27.989688Z	  
+2026-02-02T19:08:27.989744Z	      ../node_modules/jsdom/lib/jsdom/living/xhr/XMLHttpRequest-impl.js:3:34:
+2026-02-02T19:08:27.989813Z	  [37m      3 │ const HTTP_STATUS_CODES = require([32m"http"[37m).STATUS_CODES;
+2026-02-02T19:08:27.98989Z	          ╵                                   [32m~~~~~~[0m
+2026-02-02T19:08:27.989953Z	  
+2026-02-02T19:08:27.990035Z	    The package "http" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.990115Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.990171Z	    
+2026-02-02T19:08:27.990224Z	  
+2026-02-02T19:08:27.990278Z	  
+2026-02-02T19:08:27.990342Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "child_process"[0m
+2026-02-02T19:08:27.990406Z	  
+2026-02-02T19:08:27.990465Z	      ../node_modules/jsdom/lib/jsdom/living/xhr/XMLHttpRequest-impl.js:4:30:
+2026-02-02T19:08:27.99053Z	  [37m      4 │ const { spawnSync } = require([32m"child_process"[37m);
+2026-02-02T19:08:27.990587Z	          ╵                               [32m~~~~~~~~~~~~~~~[0m
+2026-02-02T19:08:27.990643Z	  
+2026-02-02T19:08:27.990703Z	    The package "child_process" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.990762Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.990816Z	    
+2026-02-02T19:08:27.990877Z	  
+2026-02-02T19:08:27.990931Z	  
+2026-02-02T19:08:27.990993Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "fs"[0m
+2026-02-02T19:08:27.991116Z	  
+2026-02-02T19:08:27.991228Z	      ../node_modules/jsdom/lib/jsdom/living/xhr/xhr-utils.js:2:19:
+2026-02-02T19:08:27.991346Z	  [37m      2 │ const fs = require([32m"fs"[37m);
+2026-02-02T19:08:27.991466Z	          ╵                    [32m~~~~[0m
+2026-02-02T19:08:27.991566Z	  
+2026-02-02T19:08:27.991706Z	    The package "fs" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.991837Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.991963Z	    
+2026-02-02T19:08:27.99211Z	  
+2026-02-02T19:08:27.99221Z	  
+2026-02-02T19:08:27.992321Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "events"[0m
+2026-02-02T19:08:27.992492Z	  
+2026-02-02T19:08:27.992628Z	      ../node_modules/jsdom/lib/jsdom/living/xhr/xhr-utils.js:3:33:
+2026-02-02T19:08:27.992712Z	  [37m      3 │ const { EventEmitter } = require([32m"events"[37m);
+2026-02-02T19:08:27.992831Z	          ╵                                  [32m~~~~~~~~[0m
+2026-02-02T19:08:27.992983Z	  
+2026-02-02T19:08:27.993142Z	    The package "events" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.993258Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.993362Z	    
+2026-02-02T19:08:27.993476Z	  
+2026-02-02T19:08:27.993579Z	  
+2026-02-02T19:08:27.99368Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "events"[0m
+2026-02-02T19:08:27.99379Z	  
+2026-02-02T19:08:27.993888Z	      ../node_modules/jsdom/lib/jsdom/virtual-console.js:2:33:
+2026-02-02T19:08:27.993979Z	  [37m      2 │ const { EventEmitter } = require([32m"events"[37m);
+2026-02-02T19:08:27.994097Z	          ╵                                  [32m~~~~~~~~[0m
+2026-02-02T19:08:27.994205Z	  
+2026-02-02T19:08:27.9943Z	    The package "events" wasn't found on the file system but is built into node.
+2026-02-02T19:08:27.994397Z	    - Make sure to prefix the module name with "node:" or update your compatibility_date to 2024-09-23 or later.
+2026-02-02T19:08:27.994492Z	    
+2026-02-02T19:08:27.994588Z	  
+2026-02-02T19:08:27.994701Z	  
+2026-02-02T19:08:27.994809Z	
+2026-02-02T19:08:27.99512Z	
+2026-02-02T19:08:27.9952Z	🪵  Logs were written to "/root/.config/.wrangler/logs/wrangler-2026-02-02_19-08-27_145.log"
+2026-02-02T19:08:28.047066Z	Failed building Pages Functions.
+2026-02-02T19:08:29.514758Z	Failed: generating Pages Functions failed. Check the logs above for more information. If this continues for an unknown reason, contact support: https://cfl.re/3WgEyrH
