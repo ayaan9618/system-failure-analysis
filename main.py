@@ -17,6 +17,23 @@ from modules.charts import (
 )
 from modules.pdf_report_generator import generate_pdf_report
 
+TTE_API = None
+
+try:
+    from terminaltexteffects.effects.effect_errorcorrect import ErrorCorrect
+    from terminaltexteffects.utils.graphics import Color, Gradient
+
+    TTE_API = "modern"
+except ImportError:
+    from terminaltexteffects.effects.effect_errorcorrect import (
+        ErrorCorrectEffect,
+        ErrorCorrectEffectArgs,
+    )
+    from terminaltexteffects.utils import ansitools, graphics
+    from terminaltexteffects.utils.terminal import Terminal, TerminalArgs
+
+    TTE_API = "legacy"
+
 
 APP_NAME = "LogLens"
 DEFAULT_OUTPUT_DIR = "output"
@@ -133,6 +150,85 @@ def color_text(text, color, bold=False):
     return f"{prefix}{text}{ANSI_RESET}"
 
 
+def build_home_screen_text():
+    return "\n".join(
+        [
+            ASCII_BANNER.strip("\n"),
+            "",
+            f"{APP_NAME} {APP_VERSION}",
+            "Intelligent log analysis and failure diagnosis for cloud incidents.",
+            "",
+            f"Default output: {DEFAULT_OUTPUT_DIR}",
+            "",
+            "Tips:",
+            "  /analyze   guided analysis",
+            "  /analyzeq  ask only for log path, then run with default output settings",
+            "  /help      show command help",
+            "  /examples  show CLI examples",
+            "  /exit      quit the app",
+            "",
+            "Available commands:",
+            "  /analyze   analyze a log file with guided setup",
+            "  /analyzeq  analyze a log file with quick default output settings",
+            "  /examples  show command-line usage examples",
+            "  /help      show command help",
+            "  /about     show app info",
+            "  /exit      close LogLens",
+            "",
+        ]
+    )
+
+
+def render_animated_home_screen():
+    home_screen_text = build_home_screen_text()
+
+    if not sys.stdout.isatty():
+        print(home_screen_text)
+        return
+
+    try:
+        if TTE_API == "modern":
+            effect = ErrorCorrect(home_screen_text)
+            effect.effect_config.error_pairs = 0.12
+            effect.effect_config.swap_delay = 6
+            effect.effect_config.movement_speed = 0.45
+            effect.effect_config.error_color = Color("#ff5f5f")
+            effect.effect_config.correct_color = Color("#45bf55")
+            effect.effect_config.final_gradient_stops = (
+                Color("#00D1FF"),
+                Color("#7AE7FF"),
+                Color("#FFFFFF"),
+            )
+            effect.effect_config.final_gradient_steps = 10
+            effect.effect_config.final_gradient_direction = Gradient.Direction.VERTICAL
+
+            with effect.terminal_output() as terminal:
+                for frame in effect:
+                    terminal.print(frame)
+        else:
+            terminal_args = TerminalArgs(animation_rate=0.005)
+            terminal = Terminal(home_screen_text, terminal_args)
+            effect_args = ErrorCorrectEffectArgs(
+                error_pairs=0.12,
+                swap_delay=6,
+                movement_speed=0.45,
+                error_color="ff5f5f",
+                correct_color="45bf55",
+                final_gradient_stops=(
+                    "00D1FF",
+                    "7AE7FF",
+                    "FFFFFF",
+                ),
+                final_gradient_steps=(10,),
+                final_gradient_direction=graphics.Gradient.Direction.VERTICAL,
+            )
+            ErrorCorrectEffect(terminal, effect_args).run()
+            sys.stdout.write(ansitools.SHOW_CURSOR())
+        print()
+    except Exception:
+        print(home_screen_text)
+
+
 def prompt_for_log_path():
     print(color_text("Enter the log file path to analyze.", ANSI_CYAN, bold=True))
     while True:
@@ -175,9 +271,6 @@ def prompt_yes_no(prompt_text, default=True):
 
 
 def run_interactive_menu():
-    _print_home_screen()
-    _print_command_list()
-
     while True:
         choice = input("\nloglens> ").strip().lower()
 
@@ -236,16 +329,7 @@ def run_interactive_menu():
 
 
 def _print_home_screen():
-    print(color_text(ASCII_BANNER, ANSI_CYAN, bold=True))
-    print(color_text(f"{APP_NAME} {APP_VERSION}", ANSI_GREEN, bold=True))
-    print(color_text("Intelligent log analysis and failure diagnosis for cloud incidents.\n", ANSI_DIM))
-    print(color_text(f"Default output: {DEFAULT_OUTPUT_DIR}", ANSI_MAGENTA))
-    print(color_text("\nTips:", ANSI_YELLOW, bold=True))
-    print(color_text("  /analyze   guided analysis", ANSI_GREEN))
-    print(color_text("  /analyzeq  ask only for log path, then run with default output settings", ANSI_GREEN))
-    print(color_text("  /help      show command help", ANSI_GREEN))
-    print(color_text("  /examples  show CLI examples", ANSI_GREEN))
-    print(color_text("  /exit      quit the app", ANSI_GREEN))
+    render_animated_home_screen()
 
 
 def _print_command_list():
@@ -381,6 +465,7 @@ def resolve_log_path(args):
 
 def main():
     enable_ansi_colors()
+    _print_home_screen()
     parser = build_parser()
     try:
         args = parser.parse_args()

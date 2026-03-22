@@ -11,7 +11,7 @@ New-Item -ItemType Directory -Force .\packaging\temp\pyinstaller | Out-Null
 $env:TMP = (Resolve-Path .\packaging\temp\pyinstaller).Path
 $env:TEMP = $env:TMP
 
-python -m pip install --upgrade pyinstaller
+#python -m pip install --upgrade pyinstaller
 python -m PyInstaller --clean --onefile --name loglens --specpath packaging --distpath packaging/dist --workpath packaging/build main.py
 
 Write-Host ""

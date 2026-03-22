@@ -11,6 +11,7 @@ requires-python = ">=3.10"
 dependencies = [
     "matplotlib",
     "reportlab",
+    "terminaltexteffects==0.14.2",
 ]
 
 [project.scripts]
