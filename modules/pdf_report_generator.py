@@ -1,13 +1,23 @@
 from pathlib import Path
 
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
-from reportlab.lib.styles import getSampleStyleSheet
+try:
+    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+    from reportlab.lib.styles import getSampleStyleSheet
+except ModuleNotFoundError:
+    SimpleDocTemplate = None
+    Paragraph = None
+    Spacer = None
+    Image = None
+    getSampleStyleSheet = None
 
 
 def generate_pdf_report(incident_details, downtime, error_analysis, root_cause):
     """
     Generate a PDF incident report with analysis and charts.
     """
+
+    if SimpleDocTemplate is None:
+        return None
 
     pdf_path = Path("output/reports/system_failure_report.pdf")
     pdf_path.parent.mkdir(parents=True, exist_ok=True)
@@ -36,7 +46,21 @@ def generate_pdf_report(incident_details, downtime, error_analysis, root_cause):
             styles["Normal"],
         )
     )
-    elements.append(Paragraph(f"Total Downtime: {downtime}", styles["Normal"]))
+    elements.append(
+        Paragraph(f"Total Downtime: {_format_downtime(downtime)}", styles["Normal"])
+    )
+    elements.append(
+        Paragraph(
+            f"Downtime Seconds: {downtime.get('duration_seconds')}",
+            styles["Normal"],
+        )
+    )
+    elements.append(
+        Paragraph(
+            f"Downtime Minutes: {downtime.get('duration_minutes')}",
+            styles["Normal"],
+        )
+    )
     elements.append(Spacer(1, 20))
 
     elements.append(
@@ -94,3 +118,13 @@ def generate_pdf_report(incident_details, downtime, error_analysis, root_cause):
 
     pdf = SimpleDocTemplate(str(pdf_path))
     pdf.build(elements)
+    return str(pdf_path)
+
+
+def _format_downtime(downtime):
+    duration = downtime.get("duration")
+    if duration is None:
+        if downtime.get("start_time") is not None:
+            return "Ongoing incident - recovery not detected"
+        return "Not available"
+    return str(duration)

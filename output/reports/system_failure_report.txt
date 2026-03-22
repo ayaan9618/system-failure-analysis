@@ -6,6 +6,8 @@ Status: recovered
 Failure Start Time: 2026-02-02 19:00:59
 Failure End Time: 2026-02-02 19:02:15
 Total Downtime: 0:01:16
+Downtime Seconds: 76
+Downtime Minutes: 1.27
 
 Error Analysis:
 Total Errors: 5

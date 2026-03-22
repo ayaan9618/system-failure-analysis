@@ -20,7 +20,9 @@ def generate_report(incident_details, downtime, error_analysis, root_cause):
     report += f"Status: {status}\n"
     report += f"Failure Start Time: {failure_start}\n"
     report += f"Failure End Time: {failure_end}\n"
-    report += f"Total Downtime: {downtime}\n\n"
+    report += f"Total Downtime: {_format_downtime(downtime)}\n"
+    report += f"Downtime Seconds: {downtime.get('duration_seconds')}\n"
+    report += f"Downtime Minutes: {downtime.get('duration_minutes')}\n\n"
 
     report += "Error Analysis:\n"
     report += f"Total Errors: {total_errors}\n"
@@ -59,3 +61,12 @@ def generate_report(incident_details, downtime, error_analysis, root_cause):
         file.write(report)
 
     return report
+
+
+def _format_downtime(downtime):
+    duration = downtime.get("duration")
+    if duration is None:
+        if downtime.get("start_time") is not None:
+            return "Ongoing incident - recovery not detected"
+        return "Not available"
+    return str(duration)

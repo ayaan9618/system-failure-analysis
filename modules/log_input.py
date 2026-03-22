@@ -3,17 +3,17 @@ import re
 from pathlib import Path
 from xml.etree import ElementTree
 
-
+#clf file reformat
 CLF_PATTERN = re.compile(
     r'^(?P<host>\S+) \S+ \S+ \[(?P<timestamp>[^\]]+)\] '
     r'"(?P<action>[^"]+)" (?P<status>\d{3}) "(?P<message>.*)"$'
 )
-
+#log file reformat
 RAW_LOG_PATTERN = re.compile(
     r"^(?P<timestamp>\S+)\t(?P<message>.*)$"
 )
 
-
+#load
 def load_logs(file_path):
     """
     Load logs from supported file formats and return raw records.
@@ -22,6 +22,7 @@ def load_logs(file_path):
     path = Path(file_path)
     suffix = path.suffix.lower()
 
+    # check file extension
     if suffix == ".json":
         return _load_json(path)
     if suffix in {".yaml", ".yml"}:
@@ -37,7 +38,7 @@ def load_logs(file_path):
 
     raise ValueError(f"Unsupported log format: {suffix}")
 
-
+# json
 def _load_json(path):
     with path.open("r", encoding="utf-8") as file:
         data = json.load(file)
