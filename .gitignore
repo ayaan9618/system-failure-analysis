@@ -1,0 +1,7 @@
+packaging/build/
+packaging/dist/
+packaging/temp/
+.venv/
+__pycache__/
+modules/__pycache__/
+*.pyc

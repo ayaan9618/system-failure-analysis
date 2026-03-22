@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loglens"
+version = "1.0.0"
+description = "Interactive log analysis and failure diagnosis tool for cloud incidents."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib",
+    "reportlab",
+]
+
+[project.scripts]
+loglens = "main:main"

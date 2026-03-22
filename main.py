@@ -1,4 +1,5 @@
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -28,6 +29,15 @@ ASCII_BANNER = r"""
 |_____\___/ \__, ||_____\___||_| |_||___/ 
             |___/                         
 """
+
+ANSI_RESET = "\033[0m"
+ANSI_BOLD = "\033[1m"
+ANSI_CYAN = "\033[96m"
+ANSI_GREEN = "\033[92m"
+ANSI_YELLOW = "\033[93m"
+ANSI_RED = "\033[91m"
+ANSI_MAGENTA = "\033[95m"
+ANSI_DIM = "\033[2m"
 
 
 def run_analysis(
@@ -100,24 +110,52 @@ def run_analysis(
     }
 
 
+def enable_ansi_colors():
+    if os.name != "nt":
+        return
+
+    try:
+        import ctypes
+
+        kernel32 = ctypes.windll.kernel32
+        handle = kernel32.GetStdHandle(-11)
+        mode = ctypes.c_uint()
+        if kernel32.GetConsoleMode(handle, ctypes.byref(mode)):
+            kernel32.SetConsoleMode(handle, mode.value | 0x0004)
+    except Exception:
+        pass
+
+
+def color_text(text, color, bold=False):
+    prefix = color
+    if bold:
+        prefix = ANSI_BOLD + color
+    return f"{prefix}{text}{ANSI_RESET}"
+
+
 def prompt_for_log_path():
-    print("Enter the log file path to analyze.")
+    print(color_text("Enter the log file path to analyze.", ANSI_CYAN, bold=True))
     while True:
         user_input = input("Log file path: ").strip()
         selected_path = user_input
 
         if not selected_path:
-            print("Log file path is required.")
+            print(color_text("Log file path is required.", ANSI_RED))
             continue
         if Path(selected_path).exists():
             return selected_path
 
-        print(f"File not found: {selected_path}")
-        print("Please enter a valid log file path.")
+        print(color_text(f"File not found: {selected_path}", ANSI_RED))
+        print(color_text("Please enter a valid log file path.", ANSI_YELLOW))
 
 
 def prompt_for_output_dir(default_output_dir=DEFAULT_OUTPUT_DIR):
-    print(f"Press Enter to use the default output directory: {default_output_dir}")
+    print(
+        color_text(
+            f"Press Enter to use the default output directory: {default_output_dir}",
+            ANSI_DIM,
+        )
+    )
     user_input = input("Output directory: ").strip()
     return user_input or default_output_dir
 
@@ -133,7 +171,7 @@ def prompt_yes_no(prompt_text, default=True):
             return True
         if user_input in {"n", "no"}:
             return False
-        print("Please enter yes or no.")
+        print(color_text("Please enter yes or no.", ANSI_YELLOW))
 
 
 def run_interactive_menu():
@@ -198,43 +236,43 @@ def run_interactive_menu():
 
 
 def _print_home_screen():
-    print(ASCII_BANNER)
-    print(f"{APP_NAME} {APP_VERSION}")
-    print("Intelligent log analysis and failure diagnosis for cloud incidents.\n")
-    print("Default output:", DEFAULT_OUTPUT_DIR)
-    print("\nTips:")
-    print("  /analyze   guided analysis")
-    print("  /analyzeq  ask only for log path, then run with default output settings")
-    print("  /help      show command help")
-    print("  /examples  show CLI examples")
-    print("  /exit      quit the app")
+    print(color_text(ASCII_BANNER, ANSI_CYAN, bold=True))
+    print(color_text(f"{APP_NAME} {APP_VERSION}", ANSI_GREEN, bold=True))
+    print(color_text("Intelligent log analysis and failure diagnosis for cloud incidents.\n", ANSI_DIM))
+    print(color_text(f"Default output: {DEFAULT_OUTPUT_DIR}", ANSI_MAGENTA))
+    print(color_text("\nTips:", ANSI_YELLOW, bold=True))
+    print(color_text("  /analyze   guided analysis", ANSI_GREEN))
+    print(color_text("  /analyzeq  ask only for log path, then run with default output settings", ANSI_GREEN))
+    print(color_text("  /help      show command help", ANSI_GREEN))
+    print(color_text("  /examples  show CLI examples", ANSI_GREEN))
+    print(color_text("  /exit      quit the app", ANSI_GREEN))
 
 
 def _print_command_list():
-    print("\nAvailable commands:")
-    print("  /analyze   analyze a log file with guided setup")
-    print("  /analyzeq  analyze a log file with quick default output settings")
-    print("  /examples  show command-line usage examples")
-    print("  /help      show command help")
-    print("  /about     show app info")
-    print("  /exit      close LogLens")
+    print(color_text("\nAvailable commands:", ANSI_YELLOW, bold=True))
+    print(color_text("  /analyze   analyze a log file with guided setup", ANSI_GREEN))
+    print(color_text("  /analyzeq  analyze a log file with quick default output settings", ANSI_GREEN))
+    print(color_text("  /examples  show command-line usage examples", ANSI_GREEN))
+    print(color_text("  /help      show command help", ANSI_GREEN))
+    print(color_text("  /about     show app info", ANSI_GREEN))
+    print(color_text("  /exit      close LogLens", ANSI_GREEN))
 
 
 def _print_help_screen():
-    print(f"\n{APP_NAME} commands:")
-    print("  /analyze   ask for log path, output directory, chart choice, and PDF choice")
-    print("  /analyzeq  ask for log path only and run with default output settings")
-    print("  /examples  show command-line usage examples")
-    print("  /about     redraw the home screen")
-    print("  /help      show this help")
-    print("  /exit      close the app")
-    print("\nCommand-line flags:")
-    print("  -h, --help         show argparse help")
-    print("  -i, --input        path to log file")
-    print("  -o, --output-dir   output directory")
-    print("  --skip-charts      disable chart generation")
-    print("  --skip-pdf         disable PDF generation")
-    print("  --no-prompt        require CLI input or fail without opening the menu")
+    print(color_text(f"\n{APP_NAME} commands:", ANSI_YELLOW, bold=True))
+    print(color_text("  /analyze   ask for log path, output directory, chart choice, and PDF choice", ANSI_GREEN))
+    print(color_text("  /analyzeq  ask for log path only and run with default output settings", ANSI_GREEN))
+    print(color_text("  /examples  show command-line usage examples", ANSI_GREEN))
+    print(color_text("  /about     redraw the home screen", ANSI_GREEN))
+    print(color_text("  /help      show this help", ANSI_GREEN))
+    print(color_text("  /exit      close the app", ANSI_GREEN))
+    print(color_text("\nCommand-line flags:", ANSI_YELLOW, bold=True))
+    print(color_text("  -h, --help         show argparse help", ANSI_MAGENTA))
+    print(color_text("  -i, --input        path to log file", ANSI_MAGENTA))
+    print(color_text("  -o, --output-dir   output directory", ANSI_MAGENTA))
+    print(color_text("  --skip-charts      disable chart generation", ANSI_MAGENTA))
+    print(color_text("  --skip-pdf         disable PDF generation", ANSI_MAGENTA))
+    print(color_text("  --no-prompt        require CLI input or fail without opening the menu", ANSI_MAGENTA))
 
 
 def print_summary(result):
@@ -243,36 +281,32 @@ def print_summary(result):
     error_analysis = result["error_analysis"]
     root_cause = result["root_cause"]
 
-    print(f"{APP_NAME} analysis completed successfully.")
-    print(f"Input File: {result['log_path']}")
+    print(color_text(f"{APP_NAME} analysis completed successfully.", ANSI_GREEN, bold=True))
+    print(color_text(f"Input File: {result['log_path']}", ANSI_DIM))
 
-    print(ASCII_BANNER)
-    print(f"{APP_NAME} {APP_VERSION}")
-    print("Intelligent log analysis and failure diagnosis for cloud incidents.\n")
-    
-    print("\n------ Failure Analysis ------")
+    print(color_text("\n------ Failure Analysis ------", ANSI_YELLOW, bold=True))
     print("Failure Start Time:", incident_details["failure_start"])
     print("Failure End Time:", incident_details["failure_end"])
     print("Incident Status:", incident_details["status"])
 
-    print("\n------ Downtime Report ------")
+    print(color_text("\n------ Downtime Report ------", ANSI_YELLOW, bold=True))
     print("Total Downtime:", format_downtime(downtime))
     print("Downtime Seconds:", downtime["duration_seconds"])
     print("Downtime Minutes:", downtime["duration_minutes"])
 
-    print("\n------ Error Pattern Analysis ------")
+    print(color_text("\n------ Error Pattern Analysis ------", ANSI_YELLOW, bold=True))
     print("Total Errors:", error_analysis["total_errors"])
-    print("\nTop Error Messages:")
+    print(color_text("\nTop Error Messages:", ANSI_CYAN, bold=True))
     for error, count in error_analysis["top_errors"]:
         print(f"- {error} -> {count}")
 
-    print("\n------ Root Cause Detection ------")
+    print(color_text("\n------ Root Cause Detection ------", ANSI_YELLOW, bold=True))
     print("Predicted Root Cause:", root_cause["summary"])
     print("Confidence:", root_cause["confidence"])
     for evidence_item in root_cause["evidence"]:
         print(f"- {evidence_item}")
 
-    print("\n------ Output Files ------")
+    print(color_text("\n------ Output Files ------", ANSI_YELLOW, bold=True))
     print(f"Text report saved to: {result['text_report_path']}")
 
     if result["generate_pdf"]:
@@ -346,6 +380,7 @@ def resolve_log_path(args):
 
 
 def main():
+    enable_ansi_colors()
     parser = build_parser()
     try:
         args = parser.parse_args()
