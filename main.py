@@ -1,5 +1,6 @@
 import argparse
 import os
+import random
 import sys
 from pathlib import Path
 
@@ -20,14 +21,21 @@ from modules.pdf_report_generator import generate_pdf_report
 TTE_API = None
 
 try:
-    from terminaltexteffects.effects.effect_errorcorrect import ErrorCorrect
-    from terminaltexteffects.utils.graphics import Color, Gradient
+    from terminaltexteffects import Color, Gradient
+    from terminaltexteffects.effects.effect_middleout import MiddleOut
+    from terminaltexteffects.effects.effect_print import Print
+    from terminaltexteffects.effects.effect_vhstape import VHSTape
 
     TTE_API = "modern"
 except ImportError:
-    from terminaltexteffects.effects.effect_errorcorrect import (
-        ErrorCorrectEffect,
-        ErrorCorrectEffectArgs,
+    from terminaltexteffects.effects.effect_middleout import (
+        MiddleoutEffect,
+        MiddleoutEffectArgs,
+    )
+    from terminaltexteffects.effects.effect_print import PrintEffect, PrintEffectArgs
+    from terminaltexteffects.effects.effect_vhstape import (
+        VHSTapeEffect,
+        VHSTapeEffectArgs,
     )
     from terminaltexteffects.utils import ansitools, graphics
     from terminaltexteffects.utils.terminal import Terminal, TerminalArgs
@@ -179,28 +187,68 @@ def build_home_screen_text():
     )
 
 
+def print_colored_home_screen():
+    print(color_text(ASCII_BANNER, ANSI_CYAN, bold=True))
+    print(color_text(f"{APP_NAME} {APP_VERSION}", ANSI_GREEN, bold=True))
+    print(color_text("Intelligent log analysis and failure diagnosis for cloud incidents.\n", ANSI_DIM))
+    print(color_text(f"Default output: {DEFAULT_OUTPUT_DIR}", ANSI_MAGENTA))
+    print(color_text("\nTips:", ANSI_YELLOW, bold=True))
+    print(color_text("  /analyze   guided analysis", ANSI_GREEN))
+    print(color_text("  /analyzeq  ask only for log path, then run with default output settings", ANSI_GREEN))
+    print(color_text("  /help      show command help", ANSI_GREEN))
+    print(color_text("  /examples  show CLI examples", ANSI_GREEN))
+    print(color_text("  /exit      quit the app", ANSI_GREEN))
+    print(color_text("\nAvailable commands:", ANSI_YELLOW, bold=True))
+    print(color_text("  /analyze   analyze a log file with guided setup", ANSI_GREEN))
+    print(color_text("  /analyzeq  analyze a log file with quick default output settings", ANSI_GREEN))
+    print(color_text("  /examples  show command-line usage examples", ANSI_GREEN))
+    print(color_text("  /help      show command help", ANSI_GREEN))
+    print(color_text("  /about     show app info", ANSI_GREEN))
+    print(color_text("  /exit      close LogLens", ANSI_GREEN))
+
+
+def clear_terminal_screen():
+    if not sys.stdout.isatty():
+        return
+    sys.stdout.write("\033[2J\033[H")
+    sys.stdout.flush()
+
+
 def render_animated_home_screen():
     home_screen_text = build_home_screen_text()
 
     if not sys.stdout.isatty():
-        print(home_screen_text)
+        print_colored_home_screen()
         return
 
     try:
         if TTE_API == "modern":
-            effect = ErrorCorrect(home_screen_text)
-            effect.effect_config.error_pairs = 0.12
-            effect.effect_config.swap_delay = 6
-            effect.effect_config.movement_speed = 0.45
-            effect.effect_config.error_color = Color("#ff5f5f")
-            effect.effect_config.correct_color = Color("#45bf55")
-            effect.effect_config.final_gradient_stops = (
-                Color("#00D1FF"),
-                Color("#7AE7FF"),
-                Color("#FFFFFF"),
-            )
-            effect.effect_config.final_gradient_steps = 10
-            effect.effect_config.final_gradient_direction = Gradient.Direction.VERTICAL
+            effect_name = random.choice(("middleout", "vhstape", "print"))
+
+            if effect_name == "middleout":
+                effect = MiddleOut(home_screen_text)
+                effect.effect_config.starting_color = Color("#00D1FF")
+                effect.effect_config.final_gradient_stops = (Color("#00D1FF"),)
+                effect.effect_config.final_gradient_steps = 1
+                effect.effect_config.final_gradient_direction = Gradient.Direction.VERTICAL
+                effect.effect_config.expand_direction = "vertical"
+                effect.effect_config.center_movement_speed = 0.3
+                effect.effect_config.full_movement_speed = 0.3
+            elif effect_name == "vhstape":
+                effect = VHSTape(home_screen_text)
+                effect.effect_config.final_gradient_stops = (Color("#00D1FF"),)
+                effect.effect_config.final_gradient_steps = 1
+                effect.effect_config.final_gradient_direction = Gradient.Direction.VERTICAL
+                effect.effect_config.total_glitch_time = 120
+                effect.effect_config.glitch_line_chance = 0.04
+                effect.effect_config.noise_chance = 0.002
+            else:
+                effect = Print(home_screen_text)
+                effect.effect_config.final_gradient_stops = (Color("#00D1FF"),)
+                effect.effect_config.final_gradient_steps = 1
+                effect.effect_config.final_gradient_direction = Gradient.Direction.VERTICAL
+                effect.effect_config.print_head_return_speed = 1.25
+                effect.effect_config.print_speed = 2
 
             with effect.terminal_output() as terminal:
                 for frame in effect:
@@ -208,25 +256,43 @@ def render_animated_home_screen():
         else:
             terminal_args = TerminalArgs(animation_rate=0.005)
             terminal = Terminal(home_screen_text, terminal_args)
-            effect_args = ErrorCorrectEffectArgs(
-                error_pairs=0.12,
-                swap_delay=6,
-                movement_speed=0.45,
-                error_color="ff5f5f",
-                correct_color="45bf55",
-                final_gradient_stops=(
-                    "00D1FF",
-                    "7AE7FF",
-                    "FFFFFF",
-                ),
-                final_gradient_steps=(10,),
-                final_gradient_direction=graphics.Gradient.Direction.VERTICAL,
-            )
-            ErrorCorrectEffect(terminal, effect_args).run()
+            effect_name = random.choice(("middleout", "vhstape", "print"))
+
+            if effect_name == "middleout":
+                effect_args = MiddleoutEffectArgs(
+                    starting_color="00D1FF",
+                    final_gradient_stops=("00D1FF",),
+                    final_gradient_steps=(1,),
+                    final_gradient_direction=graphics.Gradient.Direction.VERTICAL,
+                    expand_direction="vertical",
+                    center_movement_speed=0.3,
+                    full_movement_speed=0.3,
+                )
+                MiddleoutEffect(terminal, effect_args).run()
+            elif effect_name == "vhstape":
+                effect_args = VHSTapeEffectArgs(
+                    final_gradient_stops=("00D1FF",),
+                    final_gradient_steps=(1,),
+                    final_gradient_direction=graphics.Gradient.Direction.VERTICAL,
+                    total_glitch_time=120,
+                    glitch_line_chance=0.04,
+                    noise_chance=0.002,
+                )
+                VHSTapeEffect(terminal, effect_args).run()
+            else:
+                effect_args = PrintEffectArgs(
+                    final_gradient_stops=("00D1FF",),
+                    final_gradient_steps=(1,),
+                    final_gradient_direction=graphics.Gradient.Direction.VERTICAL,
+                    print_head_return_speed=1.25,
+                    print_speed=2,
+                )
+                PrintEffect(terminal, effect_args).run()
             sys.stdout.write(ansitools.SHOW_CURSOR())
-        print()
+        clear_terminal_screen()
+        print_colored_home_screen()
     except Exception:
-        print(home_screen_text)
+        print_colored_home_screen()
 
 
 def prompt_for_log_path():
