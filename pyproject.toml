@@ -16,3 +16,6 @@ dependencies = [
 
 [project.scripts]
 loglens = "main:main"
+
+[tool.setuptools]
+packages = ["modules"]
